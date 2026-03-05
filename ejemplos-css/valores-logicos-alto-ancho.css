@@ -1,0 +1,29 @@
+div {
+  border: 1px solid black;
+}
+
+.horizontal-physical-width {
+  width: 300px;
+}
+
+.horizontal-physical-height {
+  height: 300px;
+}
+
+.horizontal-logical {
+  inline-size: 300px;
+}
+
+.vertical-physical-width {
+  writing-mode: vertical-rl;
+  width: 300px;
+}
+
+.vertical-physical-height {
+  writing-mode: vertical-rl;
+  height: 300px;
+}
+.vertical-logical {
+  writing-mode: vertical-rl;
+  inline-size: 300px;
+}

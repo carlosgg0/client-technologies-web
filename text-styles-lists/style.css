@@ -1,0 +1,65 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;  /* 40 px si base son 16px */
+}
+
+h2 {
+    font-size: 2rem;    /* 32px */
+}
+
+h3 {
+    font-size: 1.5rem;  /* 24px */
+}
+
+p {
+    font-size: 1em;
+}
+
+.normal {
+    font-style: normal;
+}
+
+.cursiva {
+    font-style: italic;
+}
+
+.oblicua {
+    font-style: oblique 40deg;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ul ul {
+    list-style-type: circle;
+}
+
+ul ul ul {
+    list-style-type: square;
+}
+
+/* Configuración para visualizar las cajas de contenido */
+li {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    /* list-style-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/960px-Wikipedia-logo-v2.svg.png); */
+}
+
+/* Lista con posición exterior (Valor por defecto) */
+.lista-outside {
+    list-style-position: outside;
+    padding-left: 40px; /* Espacio para que el bullet no quede fuera del contenedor */
+}
+
+/* Lista con posición interior */
+.lista-inside {
+    list-style-position: inside;
+    padding-left: 0;
+}

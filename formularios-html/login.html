@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login Form</title>
+</head>
+<body>
+    <form action="/login">
+        <ul>
+            <li>
+                <label for="username">User ID: </label>
+                <input type="text" id="userid" name="userid" required>
+            </li>
+            <li>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" required>
+            </li>
+            <li>
+                <button>Log in</button>
+            </li>
+        </ul>
+    </form>
+
+    <form>
+        <fieldset>
+            <legend>Who is your favorite pony?</legend>
+            <ul>
+                <li>
+                    <label for="pinkie-pie">Pinkie Pie</label>
+                    <input type="radio" name="pony" id="pinkie-pie">
+                </li>
+                <li>
+                    <label for="rainbow-dash">Rainbow Dash</label>
+                    <input type="radio" name="pony" id="rainbow-dash">
+                </li>
+                <li>
+                    <label for="twilight-sparkle">Twilight Sparkle</label>
+                    <input type="radio" name="pony" id="twilight-sparkle">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Hotdog preferences</legend>
+            <ul>
+                <li>
+                    <label for="vegan">Vegan</label>
+                    <input type="radio" name="hotdog" id="vegan">
+                </li>
+                <li>
+                    <label for="onions">Onions</label>
+                    <input type="radio" name="hotdog" id="onions">
+                </li>
+                <li>
+                    <label for="mustard">Mustard</label>
+                    <input type="radio" name="hotdog" id="mustard">
+                </li>
+                <li>
+                    <label for="ketchup">Ketchup</label>
+                    <input type="radio" name="hotdog" id="ketchup">
+                </li>
+            </ul>
+        </fieldset>
+        <button>Submit</button>
+    </form>
+
+    <form action="">
+        <h2>Edit your preferences</h2>
+        <ul>
+            <li>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </li>
+            <li>
+                <label for="website">Website</label>
+                <input type="url" name="website" id="website">
+            </li>
+            <li>
+                <label for="telephone">Phone number</label>
+                <input type="tel" name="telephone" id="telephone">
+            </li>
+            <li>
+                <label for="favcolor">Favorite Color</label>
+                <input type="color" name="favcolor" id="favcolor">
+            </li>
+            <li>
+                <button>Update Preferences</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

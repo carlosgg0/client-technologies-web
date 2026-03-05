@@ -1,0 +1,21 @@
+div {
+    display: inline;
+}
+
+span {
+    display: block;
+}
+
+a {
+    display: block;
+}
+
+.floating-image {
+    float: left;
+    margin-right: 10px;
+}
+
+.pie-foto {
+    display: block;
+    clear: both;
+}
