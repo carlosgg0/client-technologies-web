@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Elementos Variados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Elementos Variados en CSS</h1>
+    </header>
+
+    <section class="values-colors">
+        <h2>Valores y Colores</h2>
+        <p id="example-paragraph">
+            Este es un párrafo de ejemplo para demostrar el uso de valores 
+            y colores en CSS. El texto de este párrafo debería aparecer en rojo,
+            gracias a la regla CSS aplicada en el archivo style.css.
+        </p>
+
+        <div class="fondo-azul">
+            <p>Este es un párrafo con fondo azul.</p>
+        </div>
+
+        <div class="fondo-semitransparente">
+            <p>Este es un párrafo con fondo semitransparente.</p>
+        </div>
+
+        <h3>Unidades de longitud</h3>
+
+        <p id="p-px">Estos párrafos utilizará font-size en px</p>
+        <p id="p-em">Estos párrafos utilizará font-size en em</p>
+        <p id="p-rm">Estos párrafos utilizará font-size en rm</p>
+        <p id="p-cm">Estos párrafos utilizará font-size en cm</p>
+    </section>
+
+    <section>
+        <h2>Fondos y Bordes</h2>
+
+        <p> 
+            El siguiente div tiene una imagen de fondo cuyas propiedades
+            se pueden editar en <code>style.css</code>:
+        </p>
+
+        <div class="horizontal-image">
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Tamaño y Desbordamiento</h2>
+        <p>
+            El siguiente div tiene un tamaño fijo 
+            <code>width=300px; height=200px;</code>, y tiene
+            suficiente texto para que se produzca un overflow
+        </p>
+        
+        <div class="overflow">
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+
+        <p>
+            A continuación se muestran 2 contenedores div que 
+            contienen una imagen más ancha que estos.
+        </p>
+
+        <div class="width">
+            <img src="https://picsum.photos/150" alt="">
+        </div>
+
+        <div class="max-width">
+            <img src="https://picsum.photos/300" alt="">
+        </div>
+
+        <p>
+            A continuación, se muestra un contenedor div con 
+            <code>min-height=100px</code>, y contiene una 
+            imagen que supera dicha dimensión con <code>150px</code>:
+        </p>
+
+        <div class="min-height">
+            <img src="https://picsum.photos/150" alt="">
+        </div>
+
+        <p>
+            A continuación, se muestra un div que ocupa el
+            50% del ancho del <em>viewport</em>:
+        </p>
+
+        <div class="vp">
+            <p>Paragraph inside the div</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Modelo de cajas</h2>
+
+        <p>
+            A continuación se muestran dos cajas con los
+            mismos valores de <code>width</code>,
+            <code>padding</code> y <code>border</code>, pero la
+            primera usa <code>box-sizing: content-box;</code> y
+            la segunda usa <code>box-sizing: border-box;</code>
+        </p>
+
+        <div class="content">
+            <img src="https://picsum.photos/150" alt="">
+        </div>
+
+        <div class="border">
+            <img src="https://picsum.photos/150" alt="">
+        </div>
+    </section>
+
+    <section>
+        <h2>Display y posicionamiento</h2>
+        <p>
+            A continuación, se muestran 3 elementos <em>span</em> seguidos
+            con la propiedad <code>display: inline-block;</code>,
+            pudiendo así usar las propiedades <code>width</code> y
+            <code>height</code>:
+        </p>
+
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+
+        <p>
+            Ahora mostramos una barra de navegación horizontal
+            conseguida tras aplicar un <code>inline-block</code>
+            a los elementos de una lista:
+        </p>
+        <nav>
+            <ul>
+                <li><a href="#">enlace1</a></li>
+                <li><a href="#">enlace2</a></li>
+                <li><a href="#">enlace3</a></li>
+            </ul>
+        </nav>
+
+        <p>
+            En el siguiente ejemplo se puede observar la diferencia
+            entre <code>position: relative;</code> y 
+            <code>position: absolute;</code>
+        </p>
+
+        <div class="pos-comp">
+            <img id="relative"
+                src="https://picsum.photos/60" alt="">
+            <img id="absolute" 
+                src="https://picsum.photos/60" alt="">
+        </div>
+    </section>
+
+    <section>
+        <h2>Funciones e <code>!important</code></h2>
+        <p>
+            Ahora vamos a usar la función <code>calc()</code> 
+            para establecer el ancho de un div:
+        </p>
+
+        <div class="cal">
+            <p>Este div tiene un ancho de <code>calc(100% - 50px)</code></p>
+        </div>
+
+        <div class="cal-vw">
+            <p>Este div tiene un ancho de <code>calc(50vw - 50px)</code></p>
+        </div>
+
+        <p>
+            Por último, se muestra un div con un fondo rojo, pero
+            que se ve afectado por una regla CSS con <code>!important</code>
+            que le asigna un fondo azul.
+        </p>
+        <div class="important">
+            <p>Este div tiene un fondo azul gracias a la regla con !important</p>
+        </div>
+    </section>
+</body>
+</html>

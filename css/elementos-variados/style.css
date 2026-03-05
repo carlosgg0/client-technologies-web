@@ -1,0 +1,170 @@
+code {
+    padding: 2px;
+    border-radius: 4px;
+    background-color: rgba(78, 77, 78, 0.322); 
+}
+
+p#example-paragraph {
+    /* color: red; */
+    /* color: rgb(255, 0, 0); */
+    /* color: #ff0000; */
+    color: #f00;
+}
+
+.fondo-azul {
+    color: white;
+    background-color: blue;
+}
+
+.fondo-semitransparente {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+
+#p-px {
+    font-size: 12px;
+}
+
+#p-em {
+    font-size: 1.6em;
+}
+
+#p-rm {
+    font-size: 18pt;
+}
+
+#p-cm {
+    font-size: 1cm;
+}
+
+.horizontal-image {
+    border: 2px double;
+    width: 400px;
+    height: 200px;
+    background-image: url("https://picsum.photos/100");
+    background-repeat: repeat-x;
+    background-position: 10px 20px;
+}
+
+.overflow {
+    border: 2px solid; /* for debugging purposes */
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+}
+
+.width {
+    margin: 10px 10px;
+    border: 2px solid;
+    width: 300px;
+    height: 300px;
+}
+
+.width img {
+    width: 100%;
+}
+
+.max-width {
+    margin: 10px 10px;
+    border: 2px solid;
+    max-width: 300px;
+    height: 300px;
+}
+
+.max-width img {
+    max-width: 75%;
+}
+
+.min-height {
+    border: 2px solid;
+    min-height: 100px;
+}
+
+.vp {
+    border: 2px solid;
+    width: 50vw;
+    height: 30vw;
+}
+
+
+.content {
+    box-sizing: content-box;
+    margin: 5px;
+    border: 2px solid;
+    width: 300px;
+    height: 300px;
+    padding: 30px
+}
+
+.border {
+    box-sizing: border-box;
+    margin: 5px;
+    border: 2px solid;
+    width: 300px;
+    height: 300px;
+    padding: 30px
+}
+
+span {
+    display: inline-block;
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid;
+    width: 10px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.pos-comp {
+    border: 2px solid;
+    width: 300px;
+    height: 300px;
+}
+
+img#relative {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+img#absolute {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+section {
+    position: relative; /* esto hace que la imagen se posicione respecto a este contenedor */
+    border: 1px dotted;
+}
+
+header {
+    border: 2px solid;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    z-index: 1000; /* para asegurarnos de que el header esté por encima de otros elementos */
+}
+
+.cal {
+    width: calc(100% - 50px);
+    border: 2px solid;
+}
+
+.cal-vw {
+    width: calc(50vw - 50px);
+    border: 2px solid;
+}
+
+.important {
+    color: white;
+    background-color: red !important;
+}

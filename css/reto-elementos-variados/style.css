@@ -1,0 +1,112 @@
+body {
+    background-color: #222121;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin: 1em auto;
+    max-width: 800px;
+}
+
+#cabecera {
+    background-color: rgb(83, 83, 83);
+    padding: 2em;
+    text-align: center;
+}
+
+#cabecera h1 {
+    color: rgb(255, 255, 255);
+}
+
+.subtitulo {
+    font-size: 90%;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.75em 1.25em;
+}
+
+nav a:hover {
+    background-color: rgb(83, 83, 83);
+}
+
+section {
+    border-bottom: 2px solid white;
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border-radius: 0.4em;
+}
+
+#sobre-mi img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    border: 4px solid rgb(83, 83, 83);
+}
+
+.lista-publicaciones {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-publicaciones li {
+    border-left: 4px solid;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+.titulo-pub {
+    font-weight: bolder;
+}
+
+.revista {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tarjeta-proyecto {
+    color: #222121;
+    background-color: white;
+    padding: 1.25em;
+    border: 2px solid rgb(83, 83, 83);
+    border-radius: 1em;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+
+.estado {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+.activo {
+    background-color: green;
+    color: white;
+}
+
+.finalizado {
+    background-color: grey;
+    color: white;
+}
+
+footer {
+    border: 2px solid;
+    text-align: center;
+    padding: 10px;
+    margin-top: 3em;
+}
