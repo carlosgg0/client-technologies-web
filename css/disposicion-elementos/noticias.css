@@ -15,15 +15,195 @@ a {
     width: 50vw;
 }
 
-.img-text {
+.contenedor {
     border: 2px solid;
 }
 
-.img-text img {
+.imagen-flotante {
     display: block;
+    /* margin: 0 15px 5px 0; */
+}
+
+.grupo-imagen {
+    border: 2px solid;
+    float: left;
+    margin: 10px ;
+}
+
+.pie-imagen {
+    clear: left;
+    display: block;
+    width: fit-content;
+    border: 2px solid;
+}
+
+.multiples-flotantes {
+    border: 2px solid;
+}
+
+.left {
+    border: 2px solid;
+    padding: 1em;
+    width: fit-content;
     float: left;
 }
 
-.img-text caption {
+.right {
+    border: 2px solid;
+    padding: 1em;
+    width: fit-content;
+    margin: 10px;
     clear: left;
+}
+
+.paragraphs-container {
+    border: 2px solid;
+}
+
+.third-paragraph {
+    position: relative;
+    top: 20px;
+    left: 50px;
+}
+
+
+.relative-container {
+    border: 2px solid;
+    position: relative;
+}
+
+.relative-container a {
+    border: 2px dotted;
+    width: auto;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+}
+
+
+.tarjeta-oferta {
+    border: 2px solid;
+    position: relative;
+}
+
+.oferta {
+    border: 2px solid;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.oferta-label {
+    display: block;
+}
+
+body {
+    margin-top: 4em;
+}
+
+header {
+    position: fixed;
+    top: 0;
+}
+
+aside {
+    position: sticky;
+    top: 4em;
+    width: 20vw;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li a {
+    display: block;
+    padding: 0.5em;
+    border: 2px solid;
+    width: max-content;
+}
+
+section {
+    margin-left: 20vw;
+}
+
+.solapamiento {
+    border: 2px solid;
+}
+
+.caja-1 {
+    position: relative;
+    z-index: 1;
+}
+
+.caja-2 {
+    position: relative;
+    z-index: 2;
+}
+
+.caja-3 {
+    position: relative;
+    z-index: 3;
+}
+
+
+.flex-container {
+    border: 2px solid;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.flex-item {
+    border: 1px solid;
+    margin: 2px;
+    width: max-content;
+    padding: 20px;
+    align-content: center;
+}
+
+
+.navbar {
+    border: 2px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+}
+
+.navbar a {
+    padding: 0;
+    border: 2px solid;
+    width: auto;
+    color: black;
+}
+
+.three-column-container {
+    border: 2px solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.column-left, .column-right {
+    padding: 1em;
+    background-color: green;
+    flex: 1;
+}
+
+.column-center {
+    padding: 1em;
+    background-color: wheat;
+    flex: 2;
+}
+
+.cards-container {
+    border: 2px solid;
+    display: flex;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
 }

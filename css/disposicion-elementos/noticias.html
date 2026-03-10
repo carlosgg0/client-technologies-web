@@ -7,7 +7,20 @@
     <link rel="stylesheet" href="noticias.css">
 </head>
 <body>
-    <section>
+    <header>
+        <h1>Encabezado fijo</h1>
+    </header>
+
+    <aside>
+        <h2>Índice lateral</h2>
+        <ul>
+            <li><a href="#flujo-normal">Flujo normal y propiedad display</a></li>
+            <li><a href="#flotantes-clear">Flotantes y clear</a></li>
+            <li><a href="#posicionamiento">Posicionamiento</a></li>
+        </ul>
+    </aside>
+
+    <section id="flujo-normal">
         <h1>Flujo normal y propiedad display</h1>
         <h2>Intercambio de modos de disposición</h2>
         <p>
@@ -35,11 +48,16 @@
         </nav>
     </section>
 
-    <section>
+    <section id="flotantes-clear">
         <h1>Flotantes y clear</h1>
-        <div class="img-text">
-            <img src="https://picsum.photos/150" alt="">
-            <caption class="pie-imagen">Descripción de la imagen</caption>
+        <div class="contenedor">
+            <div class="grupo-imagen">
+                <img src="#" 
+                    alt=""
+                    class="imagen-flotante">
+                <span class="pie-imagen">Descripción de la imagen</span>
+            </div>
+            
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas, cumque. Doloribus, voluptate. Voluptas 
@@ -56,7 +74,162 @@
                 consequatur cumque, voluptate, voluptate. Voluptas
                 consequatur cumque, voluptate, voluptate. Voluptas
                 consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
+                consequatur cumque, voluptate, voluptate. Voluptas
             </p>
+        </div>
+
+        <div class="multiples-flotantes">
+            <div class="left">caja 1</div>
+            <div class="left">caja 2</div>
+            <div class="left">caja 3</div>
+            <div class="right">caja 4</div>
+        </div>
+    </section>
+
+    <section id="posicionamiento">
+        <h1>Posicionamiento</h1>
+        <p>
+            En el siguiente ejemplo, el tercer párrafo tiene una posición
+            relativa, la cual hace que los atributos top y left lo desplacen
+            respecto al segundo párrafo.
+        </p>
+        <div class="paragraphs-container">
+            <p>Primer párrafo</p>
+            <p>Segundo párrafo</p>
+            <p class="third-paragraph">Tercer párrafo</p>
+            <p>Cuarto párrafo</p>
+            <p>Quinto párrafo</p>
+        </div>
+
+        <p></p>
+
+        <div class="relative-container">
+            <a href="">Botón de prueba</a>
+        </div>
+        
+        <p>
+            A continuación se muestra una tarjeta de producto 
+            con una etiqueta "Oferta" posicionada de forma absoluta
+            en la esquina superior derecha de la tarjeta.
+        </p>
+
+        <div class="tarjeta-oferta">
+            <div class="oferta">
+                &lt;&lt;Oferta&gt;&gt;
+            </div>
+            <img src="https://picsum.photos/200" 
+                alt="Imagen del producto">
+            <span class="oferta-label">Producto en oferta</span>
+            <p>Descripción largaa del producto</p>
+        </div>
+
+
+        <p>
+            En el siguiente ejemplo, se muestra elementos 
+            que se solapan parcialemente usando z-index.
+        </p>
+
+        <div class="solapamiento">
+            <div class="caja-1">Caja 1</div>
+            <div class="caja-2">Caja 2</div>
+            <div class="caja-3">Caja 3</div>
+        </div>
+    </section>
+
+    <!-- EJERCICIOS DE FLEXBOX -->
+
+    <section id="flex-direction">
+        <h1>Exploración de flex-direction</h1>
+        <p>Experimenta con flex-direction en sus cuatro valores: row, row-reverse, column, column-reverse</p>
+        
+        <h2>flex-direction: row</h2>
+        <div class="flex-container flex-row">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item flex-item-2">Item 2 (más grande)</div>
+            <div class="flex-item">Item 3</div>
+            <div class="flex-item flex-item-4">Item 4 (grande)</div>
+            <div class="flex-item">Item 5</div>
+            <div class="flex-item flex-item-6">Item 6 (extra grande)</div>
+        </div>
+    </section>
+
+    <section id="navbar-flex">
+        <h1>Barra de navegación con justify-content y align-items</h1>
+        <p>Barra de navegación horizontal con enlaces distribuidos usando Flexbox</p>
+        
+        <nav class="navbar">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#productos">Productos</a>
+            <a href="#sobre-nosotros">Sobre nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </section>
+
+    <section id="three-column-layout">
+        <h1>Layout de tres columnas con flex y flex-wrap</h1>
+        <p>Layout responsive con columnas que se reorganizan al reducir el ancho de la ventana</p>
+        
+        <div class="three-column-container">
+            <div class="column column-left">
+                <h3>Columna Izquierda</h3>
+                <p>Ancho: 1fr (25% del espacio)</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis architecto delectus.</p>
+            </div>
+            <div class="column column-center">
+                <h3>Columna Central</h3>
+                <p>Ancho: 2fr (50% del espacio)</p>
+                <p>Esta es la columna principal que tiene el doble de ancho que las laterales.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis architecto delectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis architecto delectus.</p>
+            </div>
+            <div class="column column-right">
+                <h3>Columna Derecha</h3>
+                <p>Ancho: 1fr (25% del espacio)</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis architecto delectus.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cards-flex">
+        <h1>Tarjetas de igual altura con Flexbox anidado</h1>
+        <p>Todas las tarjetas tienen la misma altura aunque su contenido sea de longitud variable</p>
+        
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tarjeta 1</h3>
+                    <p>Contenido breve</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tarjeta 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis architecto delectus.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tarjeta 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Nobis architecto delectus dolorum fugit facilis?</p>
+                    <p>Explicabo voluptatum quaerat.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tarjeta 4</h3>
+                    <p>Texto medio aquí</p>
+                </div>
+            </div>
         </div>
     </section>
 
