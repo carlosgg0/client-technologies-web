@@ -1,21 +1,29 @@
-div {
+.inline-div {
+    border: 2px solid;
     display: inline;
 }
 
-span {
+.block-span {
+    border: 2px solid;
     display: block;
 }
 
 a {
-    display: block;
+    border: 2px solid;
+    display: inline-block;
+    padding:  1em;
+    width: 50vw;
 }
 
-.floating-image {
+.img-text {
+    border: 2px solid;
+}
+
+.img-text img {
+    display: block;
     float: left;
-    margin-right: 10px;
 }
 
-.pie-foto {
-    display: block;
-    clear: both;
+.img-text caption {
+    clear: left;
 }
