@@ -140,3 +140,268 @@ console.log(str.endsWith("web"));       // false
 console.log(str.search("a"));           // 3
 console.log(str.substring(12));         // e Aplicaciones Web
 
+
+console.log("\nEjercicio 9:\n");
+
+str = "la programación javascript es divertida";
+
+console.log(str.toUpperCase());
+
+let res = str
+    .split(" ")
+    .map((x) => {
+        return x.charAt(0).toUpperCase() + x.slice(1)
+    })
+    .join(" ");
+
+console.log(res);
+
+
+console.log("\nEjercicio 10:\n");
+
+let producto = {
+    nombre: "leche desnatada",
+    precio: 3.99,
+    cantidad: 5,
+    stock: 100
+};
+
+function muestraProducto(p) {
+    let res = 
+    `Nombre: ${p.nombre}
+Precio total: ${(p.precio * p.cantidad).toFixed(2)}
+${(p.stock < 5) ? "Stock Bajo" : "Stock OK"}`;
+    console.log(res);
+}
+
+muestraProducto(producto);
+
+console.log("\nEjercicio 11:\n");
+
+let multiLineStr = `Platero es pequeño, peludo, suave;
+tan blando por fuera, que se diría todo de algodón,
+que no lleva huesos.`
+
+console.log(multiLineStr);
+
+let versos = multiLineStr.split("\n");
+
+console.log(versos)
+console.log(`Hay ${versos.length} versos`);
+
+console.log(versos.join("\n"));
+
+
+console.log("\nEjercicio 12:\n");
+
+let frutas = ["piña", "sandía", "melón", "uva", "mango"];
+
+frutas.push("pera");
+frutas.shift();
+frutas.unshift("banana", "aguacate");
+frutas.splice(3, 1);
+
+console.log(frutas);
+
+
+console.log("\nEjercicio 13:\n");
+
+let nums = [10, 20, 30, 20, 40, 20, 50];
+console.log(nums);
+if (nums.indexOf(20) >= 0) {
+    console.log(`First position: ${nums.indexOf(20)}`);
+    console.log(`Last position: ${nums.lastIndexOf(20)}`);
+    let count = nums.filter(x => x == 20).length;
+    console.log(`Number of 20s: ${count}`);
+}
+
+console.log("\nEjercicio 14:\n");
+
+let pares = [0, 2, 4, 6, 8];
+let impares = [1, 3, 5, 6, 7];
+
+let paresImpares = pares.concat(impares);
+
+console.log(paresImpares.join(" - "));
+
+
+
+console.log("\nEjercicio 15:\n");
+
+let semana = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+
+console.log("for tradicional:");
+for (let i = 0; i < semana.length; i++) {
+    console.log(i, ":", semana[i]);
+}
+
+console.log("for of:");
+for (const dia of semana) {
+    console.log(dia.toUpperCase());
+}
+
+console.log("método forEach:");
+semana.forEach((x) => {
+    console.log(x, x.length);
+})
+
+
+console.log("\nEjercicio 17:\n");
+
+function imc(peso, altura, unidad = "métrico") {
+    if (unidad === "imperial") {
+        peso = peso * 0.453592;
+        altura = altura * 0.0254;
+    }
+    console.log(`Unidad: ${unidad}, IMC: ${peso * (altura ^ 2)}`);
+}
+
+imc(80, 1.8);
+
+imc(176.369953615, 39.387308534, "imperial");
+
+
+console.log("\nEjercicio 18:\n");
+
+
+let a = [4, 8, 15, 16, 23, 42];
+
+function mediaAritmetica(data) {
+    let sum = data.reduce((x, y) => {return x + y}, 0);   
+    return sum / data.length;
+}
+
+console.log(mediaAritmetica(a));
+
+const meanStatement = function (data) {
+    let sum = data.reduce((x, y) => {return x + y}, 0);   
+    return sum / data.length;
+}
+
+console.log(meanStatement(a));
+
+const meanArrow = (data) => {
+    return data.reduce((x, y) => {
+        return x + y;
+    }, 0) / data.length;
+}
+
+console.log(meanArrow(a));
+
+
+console.log("\nEjercicio 19:\n");
+
+let names = ["Ana", "Carlos", "Beatriz", "David", "Elena"];
+
+console.log(names.filter(x => x.length > 5).map(x => `Hola, ${x}`));
+
+
+
+console.log("\nEjercicio 21:\n");
+
+let biblioteca = {
+    libro1: {
+        titulo: "Libro1",
+        autor: "Autor1",
+        año: 2026,
+        disponible: true,
+    },
+    libro2: {
+        titulo: "Libro2",
+        autor: "Autor2",
+        año: 2025,
+        disponible: false,
+    },
+    libro3: {
+        titulo: "Libro3",
+        autor: "Autor3",
+        año: 2024,
+        disponible: true,
+    }
+};
+
+console.log(biblioteca.libro2.titulo);
+console.log(biblioteca["libro2"]["titulo"]);
+console.log(biblioteca.libro3.autor);
+console.log(biblioteca["libro3"]["autor"]);
+
+
+console.log("\nEjercicio 22:\n");
+
+let calculadora = {
+    marca: "CASIO",
+    modelo: "fx-55 PLUS",
+    sumar(a, b) {
+        return a + b;
+    },
+    restar(a, b) {
+        return a - b;
+    },
+    multiplicar(a, b) {
+        return a * b;
+    },
+    dividir(a, b) {
+        if (b === 0) {
+            throw new Error("Cannot divide by 0!");
+        }
+        return a / b;
+    }
+};
+
+try {
+    calculadora.dividir(10, 0);
+} catch (e) {
+    console.log(e.message);
+}
+
+
+console.log("\nEjercicio 23:\n");
+
+function Persona(nombre, apellido, curso) {
+    
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.curso = curso;
+    
+    this.nombreCompleto = function() {
+        return this.nombre + " " + this.apellido;
+    };
+
+    this.presentacion = function() {
+        console.log(`Soy ${this.nombre}, y estoy en ${this.curso}`);
+    };
+}
+
+const persona1 = new Persona("Carlos", "García", 3);
+const persona2 = new Persona("María", "Solís", -1);
+const persona3 = new Persona("Daniel", "García", 3);
+
+persona1.presentacion();
+persona2.presentacion();
+
+console.log(typeof (persona1));
+
+console.log(typeof (persona2));
+
+console.log(persona1 instanceof Persona);
+
+
+console.log("\nEjercicio 24:\n");
+
+let cont = 0;
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", (e) => {
+    const now = new Date();
+    alert(now.getHours() + ":" + now.getMinutes());
+});
+
+btn.addEventListener("click", (e) => {
+    console.log(e.clientX, e.clientY);
+})
+
+btn.addEventListener("click", (e) => {
+    cont++;
+    console.log("Contador:", cont);
+})
+
