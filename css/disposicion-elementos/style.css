@@ -9,7 +9,7 @@
 }
 
 a {
-    border: 2px solid;
+    /* border: 2px solid; */
     display: inline-block;
     padding:  1em;
     width: 50vw;
@@ -174,9 +174,9 @@ section {
 
 .navbar a {
     padding: 0;
-    border: 2px solid;
+    /* border: 2px solid; */
     width: auto;
-    color: black;
+    /* color: black; */
 }
 
 .three-column-container {
