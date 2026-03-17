@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        caption {
+            caption-side: bottom;
+            padding: 10px;
+            font-weight: bold;
+        }
+        thead, tfoot {
+            background-color: darkgrey;
+        }
+        th, td {
+            border: 1px solid;
+            padding: 10px 10px;
+        }
+        td:last-of-type {
+            text-align: center;
+        }
+        tbody > tr:nth-of-type(even) {
+            background-color: green;
+        }
+        
+        tfoot th {
+            text-align: right;
+        }
+        
+        tfoot td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>Press me!</button>
+    </p>
+
+    <script>
+        let i = 0;
+        let rowsToAdd = 2;
+        let colsToAdd = 2;
+        const button = document.querySelector("button");
+        const table = document.createElement("table");
+
+        button.addEventListener("click", (event) => {
+            if (!pressed) { // Intially add two rows
+                
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+
+                td1.appendChild(document.createTextNode(`${i}`));
+                td2.appendChild(document.createTextNode(`${i}`));
+
+                table.appendChild(td1);
+                table.appendChild(td2);
+            } else {
+                let td = document.createElement
+            }
+
+            for (let i = 0; i < rowsToAdd; i++) {
+                for (let j = 0; j < colsToAdd; j++) {
+                    
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
