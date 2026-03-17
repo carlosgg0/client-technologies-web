@@ -1,3 +1,155 @@
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
+}
+
+body {
+    /* border: 2px solid; */
+    font-family: sans-serif;
+    color: black;
+    background-color: white;
+    margin: 2em;
+}
+
+#cabecera,
+#nav-principal,
+#contenedor-principal,
+#pie {
+    /* border: 2px solid; */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(170, 168, 168);
+    padding: 1em;
+}
+
+#nav-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#nav-principal a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    /* background-color: black; */
+    color: white;
+}
+
+#nav-principal a:hover {
+    background-color: grey;
+}
+
+.destacada img {
+    float: left;
+    width: 45%;
+    margin: 1rem;
+}
+
+.destacada .cuerpo-noticia {
+    overflow: hidden;
+    clear: left;
+}
+
+
+#rejilla-noticias {
+    /* border: 2px solid; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(320px, auto);
+    gap: 1em;
+}
+
+.noticia {
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0 0 10px;
+}
+
+.noticia img {
+    width: 100%;
+}
+
+#contenedor-principal {
+    /* border: 2px solid; */
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-areas:
+        "a a a b";
+
+    gap: 1em;
+}
+
+#noticias {
+    grid-area: a;
+}
+
+#barra-lateral {
+    grid-area: b;
+}
+
+.noticia {
+    position: relative;
+}
+
+.categoria {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#boton-subir {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+#boton-subir:hover {
+    cursor:pointer;
+}
+
+#nav-principal {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: black;
+}
+
+.widget {
+    background-color: rgb(170, 168, 168);
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.tiempo-ciudad {
+    display: flex;
+    justify-content: space-between;
+}
+
+#pie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: rgb(170, 168, 168);
+    margin-top: 1em;
 }
