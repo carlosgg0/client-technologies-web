@@ -4,75 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Table</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            border: 2px solid;
-            font-family: sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-        caption {
-            caption-side: bottom;
-            padding: 10px;
-            font-weight: bold;
-        }
-        thead, tfoot {
-            background-color: darkgrey;
-        }
-        th, td {
-            border: 1px solid;
-            padding: 10px 10px;
-        }
-        td:last-of-type {
-            text-align: center;
-        }
-        tbody > tr:nth-of-type(even) {
-            background-color: green;
-        }
-        
-        tfoot th {
-            text-align: right;
-        }
-        
-        tfoot td {
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
-    <p>
-        <button>Press me!</button>
-    </p>
+
+    <form action="">
+        <p>
+            <label for="nrows">Introduzca el número de filas:</label>
+            <input type="number" name="nrows" id="nrows">
+        </p>
+        <p>
+            <label for="ncols">Introduzca el número de columnas:</label>
+            <input type="number" name="ncols" id="ncols">
+        </p>
+        <button>Crear tabla</button>
+    </form>
+
+    <p id="msg"></p>
+
+    <table></table>
 
     <script>
-        let i = 0;
-        let rowsToAdd = 2;
-        let colsToAdd = 2;
+        const nrowsInput = document.querySelector("#nrows");
+        const ncolsInput = document.querySelector("#ncols");
         const button = document.querySelector("button");
-        const table = document.createElement("table");
+        let table = document.querySelector("table");
 
         button.addEventListener("click", (event) => {
-            if (!pressed) { // Intially add two rows
-                
-                let td1 = document.createElement("td");
-                let td2 = document.createElement("td");
+            event.preventDefault();
 
-                td1.appendChild(document.createTextNode(`${i}`));
-                td2.appendChild(document.createTextNode(`${i}`));
+            let msg = document.querySelector("#msg");
 
-                table.appendChild(td1);
-                table.appendChild(td2);
+            if (!nrowsInput.value || !ncolsInput.value) {
+                msg.textContent = "Debe introducir número de filas y columnas!";
+                msg.style.color = "red";
             } else {
-                let td = document.createElement
-            }
+                if (msg) {
+                    msg.remove();
+                } else if (table) {
+                    table.remove();
+                } 
 
-            for (let i = 0; i < rowsToAdd; i++) {
-                for (let j = 0; j < colsToAdd; j++) {
-                    
-                    
+                const rowsToAdd = nrowsInput.value;
+                const colsToAdd = ncolsInput.value;
+
+                table = document.querySelector("table");
+                table.style.border = "2px solid";
+
+                for (let i = 0; i < rowsToAdd; i++) {
+                    const newRow = document.createElement("tr");
+                    table.appendChild(newRow);
+                    for (let j = 0; j < colsToAdd; j++) {
+                        const tableData = document.createElement("td");
+                        const textData = document.createTextNode(`${j}`);
+                        newRow.appendChild(tableData);
+                        tableData.appendChild(textData);
+                    }
                 }
             }
+
+            nrowsInput.value = "";
+            ncolsInput.value = "";
+            nrowsInput.focus();
         })
     </script>
 </body>

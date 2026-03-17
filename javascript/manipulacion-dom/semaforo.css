@@ -1,0 +1,55 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    /* border: 2px solid; */
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+div#red {
+    border: 2px solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: grey; */
+}
+
+div#yellow {
+    border: 2px solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: grey; */
+}
+
+div#green {
+    border: 2px solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: grey; */
+}
+
+ul#button-list {
+    padding: 0;
+    display: flex;
+}
+
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.grey {
+    background-color: grey;
+}
