@@ -1,0 +1,34 @@
+<!--
+Ejemplo en html y javascript de una página html 
+que tiene una lista ul, con tres elementos li y un botón y 
+cada vez que se pulsa el botón se añade un nuevo elemento 
+li a la lista ul.
+-->
+
+<!--
+Cada vez que se pulsa el botón, el manejador del evento click 
+crea un nuevo elemento <li> con document.createElement, 
+le asigna texto con textContent, lo añade al final de la lista 
+con appendChild e incrementa el contador para que el siguiente 
+elemento tenga un número diferente.-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista dinámica</title>
+    <script src="nuevos-elementos-tras-pulsar-boton.js" defer></script>
+</head>
+<body>
+
+    <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <button id="boton">Añadir elemento</button>
+
+</body>
+</html>
+
