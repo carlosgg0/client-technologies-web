@@ -1,0 +1,281 @@
+/* ==========================================================================
+   0. EL ENLACE (EN EL HTML)
+   ========================================================================== 
+   En el <head> del HTML, SIEMPRE debe ir esto para que el CSS funcione:
+   <link rel="stylesheet" href="estilos.css">
+*/
+
+/* ==========================================================================
+   1. RESETEO Y MODELO DE CAJAS (Lo primero que debes escribir)
+   ========================================================================== */
+* {
+    /* El Santo Grial: El padding y el borde NO engordan la caja */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Pila de fuentes robusta (Específica -> Genérica de respaldo) */
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; /* Tamaño base (1rem = 16px) */
+    background-color: #f4f4f4; /* HEX de 6 dígitos */
+    color: rgb(51, 51, 51);    /* Color RGB */
+}
+
+.contenedor-global {
+    max-width: 1200px; /* Evita que la web sea infinita en monitores grandes */
+    margin: 0 auto;    /* TRUCO: 'auto' a los lados centra la caja horizontalmente */
+}
+
+/* ==========================================================================
+   2. SELECTORES AVANZADOS (A quién le aplicas los estilos)
+   ========================================================================== */
+/* Etiqueta normal */
+p { font-size: 1rem; }
+
+/* Clase (Varias por HTML) */
+.destacado { background-color: #fff3cd; }
+
+/* ID (Único por HTML) */
+#titular { color: #1a237e; }
+
+/* Dos clases a la vez (Pegadas) */
+.etiqueta.urgente { color: white; background: red; }
+
+/* Atributos HTML */
+[data-nuevo] { background: #d4edda; }
+a[href*="wikipedia"] { color: green; } /* Que CONTENGA la palabra */
+a[href$=".pdf"] { color: red; }        /* Que TERMINE en esa extensión */
+
+/* Combinadores */
+.tarjeta em { color: purple; }         /* Descendiente (Espacio): Cualquier <em> dentro */
+.lista-compacta > li { padding: 5px; } /* Hijo directo (>): Solo el primer nivel */
+h2 + p { font-style: italic; }         /* Adyacente (+): El <p> que está PEGADO tras un h2 */
+h3 ~ p { padding-left: 1rem; }         /* Hermanos posteriores (~): Todos los <p> tras el h3 */
+
+/* Pseudoclases y Pseudoelementos */
+tr:nth-child(even) { background: #eee; } /* Filas pares (odd para impares) */
+p:not(.destacado) { border: 1px solid black; } /* Todos los P que NO tengan esa clase */
+li:first-child { font-weight: bold; }    /* El primero de la lista */
+li:last-child { color: gray; }           /* El último de la lista */
+p::first-line { font-weight: bold; }     /* La primera línea del texto */
+p::first-letter { font-size: 3em; }      /* La primera letra (Letra Capitular) */
+
+/* Estados de Enlaces (Orden estricto: LoVe HAte) */
+a:link { color: blue; text-decoration: underline; } /* No visitado */
+a:visited { color: purple; }                        /* Visitado */
+a:hover { background: yellow; text-decoration: none;}/* Ratón por encima */
+a:active { color: red; }                            /* Haciendo clic */
+
+/* ==========================================================================
+   3. TEXTO, TIPOGRAFÍA Y MEDIDAS
+   ========================================================================== */
+.medidas-texto {
+    font-size: 24px;   /* Fijo (Píxeles) */
+    font-size: 1.5em;  /* Relativo a su padre (1.5 veces más grande) */
+    font-size: 1.5rem; /* Relativo a la raíz del documento (El estándar moderno) */
+    font-size: 18pt;   /* Puntos (Para imprimir) */
+}
+
+.estilos-texto {
+    font-style: italic;       /* Cursiva real */
+    font-style: oblique;      /* Cursiva forzada por software */
+    font-weight: 900;         /* Grosor (300 fino, 400 normal, 700 bold, 900 extra bold) */
+    text-decoration: underline; /* Subrayado (line-through para tachado) */
+    text-transform: uppercase;  /* MAYÚSCULAS (lowercase, capitalize) */
+    text-align: justify;      /* Justificado (left, right, center) */
+    line-height: 1.5;         /* Altura de línea ÓPTIMA (Siempre sin unidad, ej: 1.5) */
+    text-shadow: 1px 1px 2px gray; /* Sombra: X Y difuminado color */
+}
+
+/* ==========================================================================
+   4. LISTAS
+   ========================================================================== */
+.lista-modificada {
+    list-style-type: square;    /* Tipo de punto (disc, circle, square, none) */
+    list-style-position: inside;/* El punto se mete dentro del bloque de texto */
+    list-style-image: url('punto.png'); /* Usar una imagen como punto */
+}
+/* Recuerda: Los atributos HTML <ol start="10" reversed value="5"> van en el HTML */
+
+/* ==========================================================================
+   5. FONDOS, BORDES Y CAJAS
+   ========================================================================== */
+.caja-visual {
+    background-color: rgba(255, 0, 0, 0.5); /* Rojo al 50% de transparencia */
+    background-image: url('fondo.jpg');
+    background-repeat: repeat-x;    /* Repite solo en horizontal (no-repeat para no repetir) */
+    background-position: top right; /* Posición de la imagen de fondo */
+    
+    border: 2px solid black; /* Grosor, Estilo (solid, dashed, dotted, double), Color */
+    border-radius: 10px;     /* Esquinas redondeadas */
+    border-radius: 50%;      /* Círculo perfecto (si la caja es cuadrada) */
+    
+    margin: 20px auto 10px 5px; /* Exterior: Arriba, Derecha, Abajo, Izquierda (Agujas del reloj) */
+    padding: 15px;              /* Interior: Espacio entre el borde y el texto */
+}
+
+/* ==========================================================================
+   6. FUNCIONES Y VARIABLES AVANZADAS
+   ========================================================================== */
+.caja-dinamica {
+    /* calc() mezcla medidas relativas y fijas */
+    width: calc(100% - 40px); 
+    
+    /* Unidades Viewport: 50% del ancho de la pantalla y 30% del alto */
+    width: 50vw; 
+    height: 30vh;
+    
+    /* !important rompe las reglas y manda sobre todo lo demás */
+    background-color: red !important; 
+    
+    /* Propiedades lógicas (Giran si el texto está en vertical) */
+    writing-mode: vertical-rl; /* Texto de arriba a abajo, derecha a izquierda */
+    inline-size: 300px; /* Equivale al width en horizontal */
+    block-size: 100px;  /* Equivale al height en horizontal */
+}
+
+/* ==========================================================================
+   7. DESBORDAMIENTO (OVERFLOW) Y DISPLAY (EL FLUJO)
+   ========================================================================== */
+.caja-desborda {
+    width: 200px; height: 100px;
+    overflow: hidden; /* Corta lo que no cabe */
+    /* overflow: auto; -> Pone barra de scroll solo si es necesario */
+}
+
+.modos-display {
+    display: block;        /* Ocupa el 100% y salta de línea (div, p, h1) */
+    display: inline;       /* Ocupa lo mínimo, NO respeta width/height/padding vertical (span, a) */
+    display: inline-block; /* En línea, PERO respeta width/height/padding (Botones, nav li) */
+    display: none;         /* Desaparece del documento */
+}
+
+/* ==========================================================================
+   8. FLOTANTES (El método antiguo para noticias)
+   ========================================================================== */
+.imagen-flotante {
+    float: left;        /* La imagen va a la izquierda, el texto la rodea */
+    margin-right: 15px; /* Para que el texto no se pegue */
+}
+.texto-al-lado-de-imagen {
+    overflow: hidden;   /* TRUCO: Evita que el texto envuelva la foto por debajo */
+}
+.pie-de-foto-abajo {
+    clear: both;        /* Obliga a este elemento a caer DEBAJO de los flotantes */
+}
+
+/* ==========================================================================
+   9. POSICIONAMIENTO (DÓNDE FLOTAN LAS COSAS)
+   ========================================================================== */
+/* A) Padre e Hijo (Relative + Absolute) */
+.padre-jaula {
+    position: relative; /* Mantiene su sitio, pero sirve de ancla para el hijo */
+}
+.hijo-etiqueta-oferta {
+    position: absolute; /* Vuela y se pega a los bordes de su padre relative */
+    top: 10px; right: 10px;
+}
+
+/* B) Fixed (Botón de subir) */
+.boton-pantalla {
+    position: fixed; /* Persigue a la pantalla del ordenador */
+    bottom: 20px; right: 20px;
+    z-index: 1000;   /* Z-INDEX: Determina quién tapa a quién. El número mayor gana. */
+}
+
+/* C) Sticky (Menú pegajoso) */
+.menu-pegajoso {
+    position: sticky;
+    top: 0; /* Al hacer scroll, cuando llega a 0px de arriba, se queda pegado */
+}
+
+/* ==========================================================================
+   10. FLEXBOX (Maquetación en 1 Dimensión: Filas o Columnas)
+   Úsalo para: Menús de navegación, alinear 2 o 3 botones, centrar contenido.
+   ========================================================================== */
+.contenedor-flex {
+    display: flex;
+    flex-direction: row; /* row (fila), column (columna), row-reverse, column-reverse */
+    
+    /* Alineación en el Eje Principal (Horizontal si es row) */
+    justify-content: space-between; /* space-between (separa a los bordes), center, flex-start */
+    
+    /* Alineación en el Eje Secundario (Vertical si es row) */
+    align-items: center; /* center (centrado perfecto), stretch (estira), flex-start */
+    
+    /* Si los hijos no caben, ¿saltan de línea? */
+    flex-wrap: wrap; 
+}
+/* Hijo de un Flexbox (Para repartir anchos) */
+.hijo-flex-doble {
+    flex: 2; /* Crece el doble que un hijo con flex: 1; */
+}
+
+/* ==========================================================================
+   11. CSS GRID (Maquetación en 2 Dimensiones: Cuadrículas complejas)
+   Úsalo para: Layout principal (Noticias + Barra lateral) o Galerías de imágenes.
+   ========================================================================== */
+.contenedor-grid {
+    display: grid;
+    
+    /* Layout típico: 3/4 para noticias, 1/4 para barra lateral */
+    grid-template-columns: 3fr 1fr;
+    
+    /* Layout Rejilla: 3 columnas exactamente iguales */
+    grid-template-columns: repeat(3, 1fr);
+    
+    /* Layout Galería Mágica: Se adapta al ancho sin media queries */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+    /* Altura mínima de las filas (Mínimo 300px, si hay mucho texto crece: auto) */
+    grid-auto-rows: minmax(300px, auto);
+    
+    gap: 20px; /* Espacio/Canal entre columnas y filas */
+}
+
+/* Para posicionar un elemento concreto en una cuadrícula específica */
+.cabecera-grid {
+    grid-column: 1 / -1; /* Ocupa desde la primera línea vertical hasta la última (todo el ancho) */
+    grid-row: 1 / 2;     /* Ocupa la primera fila */
+}
+
+/* ==========================================================================
+   12. DISEÑO ADAPTATIVO (MEDIA QUERIES)
+   Las reglas para móviles o pantallas pequeñas van SIEMPRE al final del CSS.
+   Estrategia Mobile-last (o Desktop-first): Usar max-width.
+   ========================================================================== */
+
+/* TIPOGRAFÍA FLUIDA: Titular que crece con la pantalla */
+.titular-fluido {
+    font-size: calc(1.5rem + 2vw); /* 1.5rem de base + 2% del ancho de la pantalla */
+}
+
+/* PANTALLAS MEDIANAS (Tablets: menos de 900px) */
+@media screen and (max-width: 900px) {
+    .contenedor-grid {
+        grid-template-columns: 1fr; /* Rompe el layout de columnas a 1 sola apilada */
+    }
+    .rejilla-noticias {
+        grid-template-columns: repeat(2, 1fr); /* La galería pasa de 3 a 2 columnas */
+    }
+    .contenedor-flex {
+        flex-direction: column; /* Apila los elementos flex en vertical */
+    }
+}
+
+/* PANTALLAS PEQUEÑAS (Móviles: menos de 600px) */
+@media screen and (max-width: 600px) {
+    .rejilla-noticias {
+        grid-template-columns: 1fr; /* La galería pasa a 1 sola columna */
+    }
+    .imagen-flotante {
+        float: none; /* Mata el flotante para que la imagen ocupe el 100% en el móvil */
+        width: 100%;
+        margin-right: 0;
+    }
+    .menu-flex {
+        flex-wrap: wrap; /* Permite que los enlaces del menú salten a la línea inferior */
+    }
+}
