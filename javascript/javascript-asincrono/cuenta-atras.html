@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta atrás</title>
+</head>
+<body>
+    <span></span>
+    <br>
+    <button>Cancelar</button>
+    <script>
+        const spanElem = document.querySelector("span");
+        const cancelBtn = document.querySelector("button");
+        let timeOutId;
+
+        function initCountDown(val) {
+            console.log(val);
+            spanElem.textContent = val;
+            if (val === 0) {
+                //alert("Tiempo!");
+            } else {
+                timeOutId = setTimeout(() => {
+                    initCountDown(val - 1);
+                }, 1000);
+            }
+        }
+
+        initCountDown(10);
+
+        cancelBtn.addEventListener("click", () => {
+            clearTimeout(timeOutId);
+            timeOutId = null;
+        })
+
+    </script>
+</body>
+</html>

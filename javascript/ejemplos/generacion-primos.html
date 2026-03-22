@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers</title>
+</head>
+<body>
+    <form action="">
+        <label for="n-primes">Number of primes:</label>
+        <input type="number" name="n-primes" id="n-primes">
+        <button id="generate">Generate primes</button>
+        <button id="reload">Reload</button>
+    </form>
+
+    <script>
+        const nPrimes = document.querySelector("#n-primes");
+        const generateBtn = document.querySelector("#generate");
+        const reloadBtn = document.querySelector("#reload");
+        
+        generateBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            genPrimeNumbers(nPrimes.value);
+        });
+
+        function genPrimeNumbers(n) {
+            let i = 0;
+            let p = 2;
+            while (i < n) {
+                if (isPrime(p)) {
+                    console.log(p);
+                    i++;
+                }
+                p++;
+            }
+        }
+
+        function isPrime(p) {
+            let i = 2;
+            while (i <= Math.sqrt(p)) {
+                if (p % i === 0) return false;
+                i++;
+            }
+            return true;
+        }
+
+        reloadBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            document.location.reload();
+        })
+    </script>
+</body>
+</html>

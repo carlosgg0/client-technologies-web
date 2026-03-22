@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function randn(min = 500, max = 1500) {
+            return Math.random() * 1000 + 500;
+        }
+
+        function obtenerUsuario(id, callback) {
+            setTimeout(
+                callback,
+                randn(),
+                {id, nombre: "Ana"}
+            );
+        }
+
+        function obtenerPedidos(usuario, callback) {
+            setTimeout(
+                callback,
+                randn(),
+                [
+                    {producto: "Zapatillas", precio: 42},
+                    {producto: "Calcetines", precio: 10}, 
+                    {producto: "camiseta", precio: 20},
+                ]
+            );
+        }
+
+        function calcularTotal(pedidos, callback) {
+            setTimeout(
+                callback,
+                randn(),
+                pedidos.reduce((x, y) => x + y.precio, 0)
+            );
+        }
+
+        function mostrarResumen(total, callback) {
+            setTimeout(() => {
+                console.log(total);
+                callback();
+            }, randn());
+        }
+
+        // obtenerUsuario(42, (usuario) => {
+        //     obtenerPedidos(usuario, (pedidos) => {
+        //         calcularTotal(pedidos, (total) => {
+        //             mostrarResumen(total, () => {
+        //                 console.log("Proceso finalizado con éxito.");
+        //             });
+        //         });
+        //     });
+        // });
+
+        // Refactorización del callbak Hell
+
+        function alTerminarTodo() {
+            console.log("Flujo completado sin anidamiento.");
+        }
+
+        function pasoMostrarResumen(total) {
+            mostrarResumen(total, alTerminarTodo);
+        }
+
+        function pasoCalcularTotal(pedidos) {
+            calcularTotal(pedidos, pasoMostrarResumen);
+        }
+
+        function pasoObtenerPedidos(usuario) {
+            obtenerPedidos(usuario, pasoCalcularTotal);
+        }
+
+        obtenerUsuario(42, pasoObtenerPedidos);
+    </script>
+</body>
+</html>

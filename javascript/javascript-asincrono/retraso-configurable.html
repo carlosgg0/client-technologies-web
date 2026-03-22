@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mostrarMensajeConRetraso(mensaje, destinatario, retrasoMs) {
+            setTimeout(
+                console.log, retrasoMs,
+                "Mensaje para", mensaje, ":", destinatario
+            );
+        }
+
+        mostrarMensajeConRetraso("carlos", "Que tal", 3000);
+        mostrarMensajeConRetraso("dani", "Holaa ", 2000);
+        mostrarMensajeConRetraso("Alfonso", "Como vas", 1000);
+    </script>
+</body>
+</html>
