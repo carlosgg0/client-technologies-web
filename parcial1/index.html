@@ -1,0 +1,136 @@
+<!-- Carlos García Guzmán -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer examen parcial TCW</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Horarios de autobuses entre Calaveras de Arriba, Burgos y Muro de Cameros
+        </h1>
+    </header>
+
+    <main>
+        <p>
+            Normas de uso de la línea de autobuses entre Calaveras de 
+            Arriba y Muro de Cameros:
+        </p>
+        <ul>
+            <li>El billete se ha de comprar con antelación</li>
+            <li>
+                Molestar a otros pasajeros es motivo de 
+                <a href="https:\\www.sancion.es" target="_blank">sanción</a>
+            </li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th colspan="3">Calaveras... --&gt; Muro...</th>
+                    <th colspan="3">Muro... --&gt; Calaveras...</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Calaveras de Arriba</th>
+                    <th>Burgos</th>
+                    <th>Muro de Cameros</th>
+                    <th>Muro de Cameros</th>
+                    <th>Burgos</th>
+                    <th>Calaveras de Arriba</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- He puesto las mismas horas en todas las filas
+                 para ahorrar tiempo -->
+                <tr>
+                    <td></td>
+                    <td>8:30</td>
+                    <td>10:00</td>
+                    <td>11:30</td>
+                    <td>8:45</td>
+                    <td>10:15</td>
+                    <td>11:45</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><em>Solo de lunes a viernes</em></td>
+                    <td>8:30</td>
+                    <td>10:00</td>
+                    <td>11:30</td>
+                    <td>8:45</td>
+                    <td>10:15</td>
+                    <td>11:45</td>
+                </tr>
+                <tr>
+                    <td>8:30</td>
+                    <td>10:00</td>
+                    <td>11:30</td>
+                    <td>8:45</td>
+                    <td>10:15</td>
+                    <td>11:45</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>8:30</td>
+                    <td>10:00</td>
+                    <td>11:30</td>
+                    <td>8:45</td>
+                    <td>10:15</td>
+                    <td>11:45</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="http://www.compratubillete.es/" method="post">
+            <label for="origen">Origen</label>
+            <select name="origen" id="origen">
+                <option value="burgos">Burgos</option>
+                <option value="calaveras">Calaveras de Arriba</option>
+                <option value="muro">Muro de Cameros</option>
+            </select>
+            <br>
+
+            <label for="destino">Destino</label>
+            <select name="destino" id="destino">
+                <option value="burgos">Burgos</option>
+                <option value="calaveras">Calaveras de Arriba</option>
+                <option value="muro">Muro de Cameros</option>
+            </select>
+            <br>
+
+            <label for="fecha">Fecha</label>
+            <input type="date" name="fecha" id="fecha">
+
+            <fieldset>
+                <legend>Método de Pago</legend>
+                <input type="radio" name="pago" id="pago-tarjeta" value="tarjeta"
+                    checked>
+                <label for="pago-tarjeta">Tarjeta de débito/crédito</label>
+                <br>
+                <input type="radio" name="pago" id="pago-bizum" value="bizum">
+                <label for="pago">Bizum</label>
+                <br>
+                <input type="radio" name="pago" id="pago-trans" value="trans">
+                <label for="pago">Transferencia bancaria</label>
+                <br>
+            </fieldset>
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" name="correo" id="correo">
+            <label for="confirma-correo">Confirmar correo electrónico</label>
+            <input type="email" name="confirma-correo" id="confirma-correo">
+            <br>
+
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" name="telefono" id="telefono">
+            <br>
+
+            <input type="submit" value="Comprar">
+        </form>
+    </main>
+</body>
+</html>
