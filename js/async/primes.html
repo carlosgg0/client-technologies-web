@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generación de números primos</title>
+</head>
+<body>
+    <form action="">
+        <label for="num-primos">Número de primos a generar:</label>
+        <input type="number" name="num-primos" id="num-primos">
+
+        <button type="submit">Generar</button>
+    </form>
+
+    <p>Pequeño test de liveness: </p>
+    <p id="contador">0</p>
+
+    <script>
+        function esPrimo(n) {
+            if (n < 2) return false;
+
+            let i = 2;
+            while (i <= Math.sqrt(n)) {
+                if (n % i === 0) return false;
+                i = i + 1;
+            }
+            return true;
+        }
+
+        async function imprimirNumPrimos(num) {
+            let i = 0, p = 2;
+            while (i < num) {
+                if (await esPrimo(p)) {
+                    console.log(p);
+                    i++;
+                }
+                p++;
+            }
+        }
+
+        const form = document.querySelector("form");
+        const numPrimos = document.querySelector("#num-primos");
+        const contadorElem = document.querySelector("#contador");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            imprimirNumPrimos(Number(numPrimos.value));
+        });
+
+        const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+        async function contar() {
+            let i = 0;
+            while (i < 60) {
+                contadorElem.textContent = `${i}`;
+                await wait(1000);
+                i++;
+            }    
+        }
+        
+        // flujo principal
+        contar();
+
+    </script>
+</body>
+</html>

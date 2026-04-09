@@ -24,6 +24,30 @@
                 });
             })
             .catch((err) => console.error(err.message));
+        
+
+        console.log("Refactorización: ");
+        
+        // Refactorización async & await
+        // (más legible por la ausencia de lambdas)
+        async function fetchProduct() {
+            try {
+                const response = await fetch(url);
+                if (!response.ok)
+                    throw new Error(`HTTP error: ${response.status}`);
+
+                const products = await response.json();
+                for (const product of products) {
+                    console.log(`Producto: ${product.name} | Precio: ${product.price}`);
+                }
+            } catch (error) {
+                console.error(`Error de red: ${error}`);
+            } finally {
+                // ¿¿¿???
+            }
+        }
+
+        fetchProduct();
 
     </script>
 </body>
