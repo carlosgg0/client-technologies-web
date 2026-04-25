@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de fetch</h1>
+
+    <ul>
+        <li><a href="page1.txt">Page 1</a></li>
+        <li><a href="page2.txt">Page 2</a></li>
+        <li><a href="page3.txt">Page 3</a></li>
+    </ul>
+
+    <article></article>
+
+    <script>
+        const myArticle = document.querySelector("article");
+        const myLinks = document.querySelectorAll("a");
+
+        for (const link of myLinks) {
+            link.addEventListener("click", (evt) => {
+                evt.preventDefault();
+                cargarTexto(new Request(`${link.getAttribute("href")}`));
+            });
+        }
+
+        function cargarTexto(url) {
+            console.log(url);
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok)
+                        throw new Error(`Response status: ${response.status}`);
+                    return response.text();
+                })
+                .then((text) => {
+                    myArticle.innerText = text;            
+                })
+                .catch((err) => {
+                    myArticle.innerText = `Error: ${err.message}`;
+                });
+        }
+    </script>
+</body>
+</html>

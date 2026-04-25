@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="message"></p>
+    <img src="" alt="Imagen de una flor" width="500">
+
+    <script>
+        
+        const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        const message = document.querySelector("#message");
+        const myImage = document.querySelector("img");
+        const url = "Pink_flower.jpg"; 
+        
+        async function mostrarImagen() {
+            message.textContent = "Cargando imagen...";
+            try {
+                await delay(5000);
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`ERROR status: ${response.status}`);
+                }
+                const blob = await response.blob();
+                const objectURL = URL.createObjectURL(blob);
+                myImage.src = objectURL;
+                message.textContent = "Imagen cargada correctamente";
+            } catch (error) {
+                message.textContent = `No se pudo cargar la imagen: ${error}`;
+            }
+        }
+
+        mostrarImagen();
+        
+    </script>
+</body>
+
+</html>

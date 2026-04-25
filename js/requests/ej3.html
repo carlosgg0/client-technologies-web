@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ol>
+            
+        </ol>
+    </div>
+    <script>
+        const API_ENDPOINT = "https://mdn.github.io/learning-area/javascript/" + 
+            "apis/fetching-data/can-store/products.json";
+
+        const myList = document.querySelector("ol");
+
+        async function getProductos() {
+            try {
+                const response = await fetch(API_ENDPOINT);
+                if (!response.ok) {
+                    throw new Error(`Error status: ${response.status}`);
+                }
+                return await response.json(); 
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        getProductos()
+            .then(productos => {
+                if (!productos) return;
+
+                for (const producto of productos) {
+                    console.log(producto);
+                    const li = document.createElement("li");
+                    li.textContent = li.textContent = `${producto.name} - $${producto.price} (${producto.type})`;
+                    myList.appendChild(li);
+                }
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    </script>
+</body>
+</html>
