@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #cccccc;
+}
+
+.toolbar {
+  height: 75px;
+  background: #cccccc;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar div {
+  margin: 0 20px;
+  flex: 3;
+}
+
+input[type="color"],
+button {
+  flex: 1;
+}
+
+input[type="range"] {
+  width: calc(100% - 20px);
+}
+
+output {
+  width: 20px;
+}
+
+span {
+  position: relative;
+  bottom: 5px;
+}
