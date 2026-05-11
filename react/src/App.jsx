@@ -5,10 +5,12 @@ import MaquinaExpendedora from "./interactividad/MaquinaExpendedora";
 import BarraTareas from "./interactividad/PropagacionEventos";
 import Login from "./ui-description/Login";
 import PasswordValidator from "./ui-description/PasswordValidator";
+import PonyPisador from './gestion-estado/PonyPisador.jsx';
+import Lugares from './gestion-estado/Lugares';
 
 function App() {
   return (
-    <MaquinaExpendedora/>
+    <Lugares />
   )
 }
 
