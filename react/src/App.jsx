@@ -10,10 +10,15 @@ import Lugares from './gestion-estado/Lugares';
 import Accordion from "./gestion-estado/Accordion.jsx";
 import MainView from "./gestion-estado/SideBarSincronizada.jsx";
 import FilterableProductsTable from "./gestion-estado/Filters.jsx";
+import Cronometro from "./gestion-estado/Cronometro.jsx";
+import Chat from "./gestion-estado/Chat.jsx";
+import HomeAutomationPanel from "./gestion-estado/Domotica.jsx";
+import TareasApp from "./gestion-estado/components/TareasApp.jsx";
+import Pagina from "./gestion-estado/components/Pagina.jsx";
 
 function App() {
   return (
-    <FilterableProductsTable />
+    <Pagina />
   )
 }
 
